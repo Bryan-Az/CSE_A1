@@ -92,7 +92,7 @@ mod = linear_model.LinearRegression()
 mod.fit(X, y)
 
 predictions = open("./a1_data/predictions_Minutes.txt", 'w')
-predictions.write("./a1_data/recipe_id,prediction\n")
+predictions.write("recipe_id,prediction\n")
 for d in readGz("./a1_data/testRecipes.json.gz"):
   x = [1,len(d['steps'])]
   pred = mod.predict([x])[0]
